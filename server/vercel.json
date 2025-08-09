@@ -2,24 +2,20 @@
   "version": 2,
   "builds": [
     {
-      "src": "server/index.js",
-      "use": "@vercel/node"
+      "src": "index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/**"]
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "server/index.js"
+      "dest": "index.js"
     }
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "ignoreCommand": "echo 'Skipping node_modules and dist'",
-  "functions": {
-    "api/**/*.js": {
-      "memory": 128,
-      "maxDuration": 10
-    }
   }
 }
