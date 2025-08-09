@@ -14,7 +14,7 @@ const HomePage = () => {
     const fetchFeaturedProjects = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/projects?limit=3');
+        const response = await axios.get('https://full-stack-portfoliobackend.vercel.app/api/projects?limit=3');
         setFeaturedProjects(response.data.projects || response.data);
       } catch (err) {
         console.error('Error fetching featured projects:', err);

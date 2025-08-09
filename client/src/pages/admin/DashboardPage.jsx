@@ -16,7 +16,7 @@ const DashboardPage = () => {
     const fetchDashboardData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/projects/admin/dashboard');
+        const response = await axios.get('https://full-stack-portfoliobackend.vercel.app/api/projects/admin/dashboard');
         setStats(response.data);
         setError(null);
       } catch (err) {

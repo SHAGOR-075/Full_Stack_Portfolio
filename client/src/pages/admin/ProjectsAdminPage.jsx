@@ -16,7 +16,7 @@ const ProjectsAdminPage = () => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/projects');
+        const response = await axios.get('https://full-stack-portfoliobackend.vercel.app/api/projects');
         setProjects(response.data.projects || response.data);
         setError(null);
       } catch (err) {
@@ -37,7 +37,7 @@ const ProjectsAdminPage = () => {
     try {
       setDeleteLoading(true);
       
-      await axios.delete(`/api/projects/${deleteId}`);
+      await axios.delete(`https://full-stack-portfoliobackend.vercel.app/api/projects/${deleteId}`);
       
       // Update local state
       setProjects(projects.filter(project => project._id !== deleteId));

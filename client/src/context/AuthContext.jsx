@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
   // Login function
   const login = async (email, password) => {
     try {
-      const response = await axios.post('/api/auth/login', { email, password });
+      const response = await axios.post('https://full-stack-portfoliobackend.vercel.app/api/auth/login', { email, password });
       const { token } = response.data;
       
       // Save token to localStorage

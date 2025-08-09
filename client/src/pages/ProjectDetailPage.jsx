@@ -16,7 +16,7 @@ const ProjectDetailPage = () => {
     const fetchProject = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`/api/projects/${id}`);
+        const response = await axios.get(`https://full-stack-portfoliobackend.vercel.app/api/projects/${id}`);
         setProject(response.data);
         setError(null);
       } catch (err) {
